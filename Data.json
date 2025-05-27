@@ -1,0 +1,55 @@
+{
+    "name": "Swati",
+    "email": "swati2005@gmail.com",
+    "password": "pass",
+    "address": {
+        "street": "FC road",
+        "city": "Bhusawal",
+        "postalCode": "425201"
+    },
+    "Phone": "8234567899"
+}
+
+{
+    "name": "Mango Juice",
+    "description": "Mango juice exported by india",
+    "price": 150,
+    "category": "beverage",
+    "image": "Photo",
+    "averageRating": 4
+}
+// order json
+{
+    "customer": "682eb52224209b8f664caa65",
+    "items": [
+        {
+            "food": "682ff8422a9cbd79de1a9338",
+            "quantity": 3
+        },
+        {
+            "food": "682ff8422a9cbd79de1a9338",
+            "quantity": 2
+        },
+        {
+            "food": "682ff8422a9cbd79de1a9338",
+            "quantity": 5
+        }
+    ],
+    "totalPrice": 123123,
+}
+//review json
+{
+    "customer": "682eb52224209b8f664caa65",
+    "food": "682ff8422a9cbd79de1a9338",
+    "rating": 5,
+    "comment": "Food was very delicious"
+}
+//food json
+{
+    "name": "Gulab Jamun",
+    "description": "Traditional Indian dessert made of milk solids soaked in rose-flavored syrup",
+    "price": 120,
+    "category": "dessert",
+    "image": "Photo",
+    "averageRating": 4
+}
