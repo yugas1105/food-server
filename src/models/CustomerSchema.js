@@ -4,7 +4,7 @@ let customerSchema = mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Name is required'],
-        trim: true
+        // trim: true
     },
     email: {
         type: String,
@@ -16,7 +16,7 @@ let customerSchema = mongoose.Schema({
     password: {
         type: String,
         required: [true, 'Password is required'],
-        minlength: 8
+        minlength: [4, 'Password should be minimum 5 letters']
     },
     address: {
         street: String,

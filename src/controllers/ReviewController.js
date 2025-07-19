@@ -16,6 +16,8 @@ let createReview = async (req, res) => {
 let fetchAllReviews = async (req, res) => {
     try {
         let result = await Review.find()
+            .populate("customer")
+            .populate("food")
         res.status(200).json(result)
     } catch (error) {
         res.status(500).json(error)
@@ -37,8 +39,8 @@ let deleteReview = async (req, res) => {
 let updateReview = async (req, res) => {
     let { reviewId, rating } = req.body
     let result = await Review.findByIdAndUpdate(
-        { _id: reviewId }, 
-        { rating: rating }, 
+        { _id: reviewId },
+        { comment: comment },
         { new: true }
     )
     try {
@@ -51,16 +53,5 @@ let updateReview = async (req, res) => {
     }
 }
 
-let fetchAllReviewsWithPopulate = async (req, res) => {
-    try {
-        let result = await Review.find()
-            .populate("customer")
-            .populate("food")
-        res.status(200).json(result)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
 
-
-export { createReview, updateReview, fetchAllReviews, deleteReview, fetchAllReviewsWithPopulate }
+export { createReview, updateReview, fetchAllReviews, deleteReview }

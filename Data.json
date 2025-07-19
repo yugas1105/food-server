@@ -1,4 +1,4 @@
-{
+[{
     "name": "Swati",
     "email": "swati2005@gmail.com",
     "password": "pass",
@@ -8,8 +8,7 @@
         "postalCode": "425201"
     },
     "Phone": "8234567899"
-}
-
+},
 {
     "name": "Mango Juice",
     "description": "Mango juice exported by india",
@@ -17,8 +16,7 @@
     "category": "beverage",
     "image": "Photo",
     "averageRating": 4
-}
-// order json
+},
 {
     "customer": "682eb52224209b8f664caa65",
     "items": [
@@ -35,21 +33,27 @@
             "quantity": 5
         }
     ],
-    "totalPrice": 123123,
-}
-//review json
+    "totalPrice": 123123
+},
 {
     "customer": "682eb52224209b8f664caa65",
     "food": "682ff8422a9cbd79de1a9338",
     "rating": 5,
     "comment": "Food was very delicious"
-}
-//food json
+},
 {
-    "name": "Gulab Jamun",
+    "foodname": "Gulab Jamun",
     "description": "Traditional Indian dessert made of milk solids soaked in rose-flavored syrup",
     "price": 120,
     "category": "dessert",
     "image": "Photo",
     "averageRating": 4
-}
+},
+{
+"customer": "683ac874a2b094c84bda560e",
+  "amount": 400,
+  "transactionID": "2574",
+  "status": "Completed",
+  "paymentMethod": "Card"  
+  }
+]
