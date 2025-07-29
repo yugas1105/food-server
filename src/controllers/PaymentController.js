@@ -9,39 +9,6 @@ const razorpay = new Razorpay({
   key_secret: "mIJhHvktdpwRj8jStLxrtdFc",
 });
 
-// Create order
-// const RazorpayOrder = async (req, res) => {
-//   try {
-//     const {customerId, amount } = req.body;
-
-//     if (!amount || amount <= 0) {
-//       return res.status(400).json({ success: false, message: "Invalid amount" });
-//     }
-
-//     const options = {
-//       amount: amount * 100, // Convert to paise
-//       currency: "INR",
-//       receipt: shortid.generate(),
-//       payment_capture: 1,
-//     };
-
-//     const razorpayOrder = await razorpay.orders.create(options);
-
-//     const payment = new Payment({
-//       customer: customerId,
-//       amount: amount * 100,
-//       transactionId: razorpayOrder.id,
-//       status: "Paid",
-//       paymentMethod: "Razorpay"
-//     });
-
-//     await payment.save();
-
-//     res.status(201).json({ success: true, order: razorpayOrder });
-//   } catch (error) {
-//     res.status(500).json({ success: false, message: error.message });
-//   }
-// };
 const RazorpayOrder = async (req, res) => {
   try {
     const { customer, amount } = req.body; // ✅ FIXED
@@ -73,7 +40,6 @@ const RazorpayOrder = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
 
 // Verify Razorpay payment
 const verifyRazorpay = async (req, res) => {

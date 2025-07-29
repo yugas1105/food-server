@@ -31,6 +31,10 @@ let fetchOrdersByCustomer = async (req, res) => {
     //     .populate("customer")
     //     .populate("items.food")
 
+    if (!customerId) {
+      return res.status(400).json({ message: "customerId is required" });
+    }
+
     let result = await Order.where("customer")
       .eq(customerId)
       .populate("customer")
@@ -38,34 +42,34 @@ let fetchOrdersByCustomer = async (req, res) => {
 
     res.status(200).json(result);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json(error.message);
   }
 };
 
 let fetchTotalRevenue = async (req, res) => {
-    try {
-        const result = await Order.aggregate([
-            {
-                $match: {
-                    status: "Delivered",
-                }
-            },
-            // {
-            //     $unwind: "$items" // Unwind the items array to process individual dishes
-            // },
-            {
-                $group: {
-                    _id: null, // No grouping key to calculate the total
-                    totalRevenue: { $sum: "$totalPrice" } // Sum up the TotalAmount field
-                }
-            }
-        ])
-        console.log(result);
-        res.status(200).json({ data: result })
-    } catch (error) {
-        console.log(error.message);
-    }
-}
+  try {
+    const result = await Order.aggregate([
+      {
+        $match: {
+          status: "Delivered",
+        },
+      },
+      // {
+      //     $unwind: "$items" // Unwind the items array to process individual dishes
+      // },
+      {
+        $group: {
+          _id: null, // No grouping key to calculate the total
+          totalRevenue: { $sum: "$totalPrice" }, // Sum up the TotalAmount field
+        },
+      },
+    ]);
+    console.log(result);
+    res.status(200).json({ data: result });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 let deleteOrder = async (req, res) => {
   try {
@@ -102,5 +106,5 @@ export {
   fetchOrdersByCustomer,
   deleteOrder,
   updateOrder,
-  fetchTotalRevenue
+  fetchTotalRevenue,
 };

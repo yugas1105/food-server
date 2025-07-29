@@ -1,59 +1,94 @@
-[{
+[
+  {
     "name": "Swati",
     "email": "swati2005@gmail.com",
     "password": "pass",
     "address": {
-        "street": "FC road",
-        "city": "Bhusawal",
-        "postalCode": "425201"
+      "street": "FC road",
+      "city": "Bhusawal",
+      "postalCode": "425201"
     },
     "Phone": "8234567899"
-},
-{
+  },
+  {
     "name": "Mango Juice",
     "description": "Mango juice exported by india",
     "price": 150,
     "category": "beverage",
     "image": "Photo",
     "averageRating": 4
-},
-{
+  },
+  {
     "customer": "682eb52224209b8f664caa65",
     "items": [
-        {
-            "food": "682ff8422a9cbd79de1a9338",
-            "quantity": 3
-        },
-        {
-            "food": "682ff8422a9cbd79de1a9338",
-            "quantity": 2
-        },
-        {
-            "food": "682ff8422a9cbd79de1a9338",
-            "quantity": 5
-        }
+      {
+        "food": "682ff8422a9cbd79de1a9338",
+        "quantity": 3
+      },
+      {
+        "food": "682ff8422a9cbd79de1a9338",
+        "quantity": 2
+      },
+      {
+        "food": "682ff8422a9cbd79de1a9338",
+        "quantity": 5
+      }
     ],
     "totalPrice": 123123
-},
-{
+  },
+  {
     "customer": "682eb52224209b8f664caa65",
     "food": "682ff8422a9cbd79de1a9338",
     "rating": 5,
     "comment": "Food was very delicious"
-},
-{
+  },
+  {
     "foodname": "Gulab Jamun",
     "description": "Traditional Indian dessert made of milk solids soaked in rose-flavored syrup",
     "price": 120,
     "category": "dessert",
     "image": "Photo",
     "averageRating": 4
-},
-{
-"customer": "683ac874a2b094c84bda560e",
-  "amount": 400,
-  "transactionID": "2574",
-  "status": "Completed",
-  "paymentMethod": "Card"  
-  }
+  },
+  {
+    "customer": "683ac874a2b094c84bda560e",
+    "amount": 400,
+    "transactionID": "2574",
+    "status": "Completed",
+    "paymentMethod": "Card"
+  },
+  [
+    {
+      "_id": "64f1a2c84d0d9e0012d8cabc",
+      "customer": {
+        "_id": "64f19fd84d0d9e0012d8cab8",
+        "name": "Swati Sonawane",
+        "email": "swati@example.com",
+        "phone": "9876543210"
+      },
+      "items": [
+        {
+          "food": {
+            "_id": "64f1a1264d0d9e0012d8cab9",
+            "name": "Paneer Butter Masala",
+            "price": 200
+          },
+          "quantity": 2
+        },
+        {
+          "food": {
+            "_id": "64f1a1354d0d9e0012d8caba",
+            "name": "Butter Naan",
+            "price": 40
+          },
+          "quantity": 4
+        }
+      ],
+      "totalPrice": 520,
+      "status": "Confirmed",
+      "createdAt": "2025-07-18T12:30:45.123Z",
+      "updatedAt": "2025-07-18T13:10:12.987Z",
+      "__v": 0
+    }
+  ]
 ]
