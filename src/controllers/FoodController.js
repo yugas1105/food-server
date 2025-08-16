@@ -96,7 +96,7 @@ const fetchDishesWithAvgratings = async (req, res) => {
     ]);
     res.status(200).json({ data: populatedDishes });
   } catch (error) {
-    res.status(200).json(error);
+    res.status(500).json(error);
   }
 };
 
